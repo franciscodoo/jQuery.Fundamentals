@@ -3,13 +3,15 @@
 <head>
     <title>Using Basic jQuery Selectors</title>
     <link rel="stylesheet" type="text/css" href="../style.css"/>
-    <script type="text/javascript" src="../jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="../jquery-3.2.1.js"></script>
+
     <script type="text/javascript">
-        $("document").ready(function() {
-            //$("p").css("border", "3px solid red");
-            //$(".a").css("border", "3px solid red");
-            //$("#example").css("border", "3px solid red");
-            //$("p.b").css("border", "3px solid red");
+        $("document").ready(function() 
+        {
+            //$("p").css("border", "3px solid red");        //selects all elements with [TagName 'p'] and applies a solid red border with 3px to them
+            //$(".a").css("border", "3px solid red");       //selects all elements with [ClassName 'a']  and applies border
+            //$("#example").css("border", "3px solid red"); //selects all elements with [Id'example'] and applies border
+            $("p.b").css("border", "3px solid red");        //selects all elements with [TagName 'p'] and [ClassName 'b'] and applies border
         });
     </script>
 </head>

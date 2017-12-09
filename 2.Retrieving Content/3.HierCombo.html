@@ -3,24 +3,26 @@
 <head>
 <title>Hierarchy Selectors</title>
 <link rel="stylesheet" href="../style.css"/>
-<script type="text/javascript" src="../jquery-1.11.1.js"></script>
+<script type="text/javascript" src="../jquery-3.2.1.js"></script>
+
 <script type="text/javascript">
-    $("document").ready(function() {
-        // The child selector "parent > child" selects "child" elements that are
-        // immediate descendants of the "parent"
+    $("document").ready(function() 
+    {
+        // The [child selector] "parent > child" selects "child" elements that are immediate descendants of the "parent"
+        // ~ select the <p> that are immediate children of a div element ~ 
         //$("div > p").css("border", "3px solid red");
         
-        // The descendant selector "ancestor descendant" selects "descendant" elements
-        // as long as they have an "ancestor" element somewhere above them
+        // The [descendant selector] "ancestor descendant" selects "descendant" elements as long as they have an "ancestor" element somewhere above them
+        // ~ select <p> with class .a that are inside a div (DON'T need to be immediate children) ~ 
         //$("div p.a").css("border", "3px solid red");
         
-        // The next adjacent selector "prev + next" selects the "next" element if it
-        // is immediately preceded by a "prev" element
+        // The next [adjacent selector] "prev + next" selects the "next" element if it is immediately preceded by a "prev" element
+        // ~ select all divs that are next to a </ul> element ~
         //$("ul + div").css("border", "3px solid red");
         
-        // Next sibling selector "prev ~ siblings" selects all "siblings" elements that come
-        // after a "prev" element
-        //$("#para1 ~ p").css("border", "3px solid red");
+        // Next [sibling selector] "prev ~ siblings" selects all "siblings" elements that come after a "prev" element
+        // ~select all elements with id 'para1' that come after a <p>
+        $("#para1 ~ p").css("border", "3px solid red");
     });
 </script>
 </head>
@@ -40,6 +42,8 @@
         <p class="b">This is paragraph 3</p>
         <p id="para4" lang="en-us">This is paragraph 4</p>
         <p id="para5" lang="en-gb">This is paragraph 5</p>
-    </div>
+        <a>
+            <p class="a">This is paragraph 6</p>
+        </a>
 </body>
 </html>
