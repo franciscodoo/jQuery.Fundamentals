@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>First jQuery-Enabled Page</title>
+    <link rel="stylesheet" href="../style.css"/>
+    
+    <!-- insert the script to reference jQuery here -->
+    <script type="text/javascript" src="../jquery-3.2.1.js"></script>
+
+    <!--    $ is the short-hand way to call the jQuery library; "document" indicates that we'll gonna be working on the page document itself
+            Then we pass a callback function: When the page is ready** append the following html to the body of the document
+             **ready: event listener: when the DOM structure of the page is fully parsed. It differs from OnLoad() only when all content is loaded (images...) -->
+    <script type="text/javascript">
+        $("document").ready(
+                function() 
+                {
+                    $("body").append("<p>The page just loaded!</p>");
+                });
+    
+
+    <!-- Versus the  standard DOM event way of doing the task... -->
+    window.addEventListener("DOMContentLoaded", function(evt) 
+    {
+        var elem = document.getElementsByTagName("body")[0];
+        var para = document.createElement("p");
+        var text = document.createTextNode("The page just loaded!");
+        para.appendChild(text);
+        elem.appendChild(para);
+    });
+
+    </script>
+</head>
+<body>
+<!-- we start with an empty document -->
+</body>
+</html>

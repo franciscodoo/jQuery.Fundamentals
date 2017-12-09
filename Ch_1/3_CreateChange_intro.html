@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Creating and Changing Content</title>
+    <link rel="stylesheet" href="../style.css"/>
+    <script type="text/javascript" src="../jquery-3.2.1.js"></script>
+    <script type="text/javascript">
+        $("document").ready(function () 
+        {      
+            var newP = $("<p>"); //create var using jQuery
+            newP.append("<em>A Wild jQuery string appears!</em>"); //assign data
+
+            $("#example1").html(newP);                           //html: will replace all content of the selector with the provided content           
+            $("#creation").prepend("Watch This");               //prepend: inserts before the existing content      
+            $("#example2").text("<h2>This is a new H2</h2>");    //text: content is inserted as plain text
+        });
+    </script>
+</head>
+<body>
+    <div id="div_intro">
+    	<h1 id="intro">Using jQuery to Create/Change Content</h1>
+    	<p>jQuery makes it very easy to create new page content and change existing page content.</p>
+    </div>
+
+    <div id="div_creation">
+        <h2 id="creation">Content Creation</h2>
+        <p>Creating new content is as simple as passing a string of HTML to the $() function.</p>
+        <p>
+            For example, <code>$("&lt;p&gt;")</code> creates a new, empty paragraph tag. 
+            To add new content to the paragraph, you could simply write <code>$("&lt;p&gt;").append("&lt;em&gt;Hello there&lt;/em&gt;")</code>.
+        </p>
+    </div>
+
+    <div id="div_changing">
+        <h2 id="changing">Changing Content</h2>
+        <p>There are multiple ways to change page content using jQuery, depending on your needs.</p>
+        <p>The <code>html()</code> and <code>text()</code> functions can be used to directly manipulate the contents of elements, and there are ways to control how content can be inserted and moved around in the page.</p>
+    </div>
+
+    <div id="example1"></div>
+    <div id="example2"></div>
+</body>
+</html>

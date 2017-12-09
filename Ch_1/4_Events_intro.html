@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>jQuery Event Handling</title>
+    <link rel="stylesheet" href="../style.css"/>
+    <script type="text/javascript" src="../jquery-3.2.1.js"></script>
+
+    <!-- Two basic functions to handle events with jQuery: Bind an UnBind (on;off) -->
+    <script type="text/javascript">
+        $("document").ready(function() { //When page is ready
+            //Use selector to get ref to div
+            $("#example").on("mousemove", onMouseOver); //on: start listening for <mousemove> event. Sends unified jQuery event object to callback function
+            $("#example").on("click", onMouseClick);
+            $("#example").on("mouseleave", onMouseLeave);
+        });
+        
+        function onMouseOver(evt) {
+            //Use text func to show in the example div some properties of evt object
+            $("#example").text(evt.type + ": " + evt.pageX + ", " + evt.pageY + "\n" + "Button: " + evt.which + " Key: " + evt.metaKey);
+        }
+        function onMouseClick(evt) {
+            $("#example").text(evt.type + ": " + evt.pageX + ", " + evt.pageY); //show event type and coordinates
+            $("#example").off("mousemove", onMouseOver); //off: turn OFF the listener
+        }
+        function onMouseLeave(evt) {
+            $("#example").text("mouseleave"); //Just showing "mouseleave"
+        }
+    </script>
+</head>
+<body>
+    <h1>jQuery Event Handling</h1>
+    <p>jQuery normalizes an event structure across browsers and provides cross-browser consistency for properties such as the event name, the page coordinates of the mouse, the element where the event originated along with any other element related to the event, and information such as whether a meta-key or specific mouse button was pressed.</p>
+    <div id="example">
+    </div>
+</body>
+</html>
