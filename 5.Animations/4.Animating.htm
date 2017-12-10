@@ -3,17 +3,17 @@
 <head>
     <title>Animating an Element</title>
     <link rel="stylesheet" href="../style.css"/>
-    <script type="text/javascript" src="../jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="../jquery-3.2.1.js"></script>
     <script type="text/javascript">
         $(function() {
             $("#right").click(function() {
-                $("#theDiv").animate({ width: "500px" }, 1000);
+                $("#theDiv").animate({ width: "+=500px" }, 1000);
             });
             $("#text").click(function() {
                 $("#theDiv").animate({ fontSize: "24pt" }, 1000);
             });
             $("#move").click(function() {
-                $("#theDiv").animate({ left: "500" }, 1000, "swing");
+                $("#theDiv").animate({ left: "200%" }, 1000, "swing");
             });
             $("#all").click(function() {
                 $("#theDiv").animate({ left: "500", fontSize: "24pt", width: "500px" }, 1000, "swing");

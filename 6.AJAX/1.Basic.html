@@ -8,18 +8,29 @@
     	border: 2px dashed lightgray;
     }
     </style>
-    <script type="text/javascript" src="../jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="../jquery-3.2.1.js"></script>
     <script type="text/javascript">
       $("document").ready(function() {
         getData();
       });
       
       function getData() {
+        $.ajax({         
+          url: "testdata.txt", // the URL for the request
+          type: "GET", // whether this is a POST or GET request
+          dataType : "text" // the type of data we expect back
+        })
+        .done(successFn) //sucess case
+        .fail(errorFn) // error case
+        .always(function (data, textStatus, jqXHR ) //always runs
+        { 
+            console.log("The request is complete!");
+        });
       }
       
-      function successFn(result) {
+      function successFn(data, status, jqXHR) {
         console.log("Setting result");
-      	$("#content").append(result);
+      	$("#content").append(data);
       }
       function errorFn(xhr, status, strErr) {
         console.log("There was an error!");

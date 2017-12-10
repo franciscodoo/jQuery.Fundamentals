@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
+    <meta charset="UTF-8" /> 
     <title>Using AJAX Global Events</title>
     <style>
     #content {
@@ -8,23 +9,16 @@
     	border: 2px dashed lightgray;
     }
     </style>
-    <script type="text/javascript" src="../jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="../jquery-3.2.1.js"></script>
     <script type="text/javascript">
-      $("document").ready(function() {
+      $("document").ready(function() 
+      {
         $(document).ajaxStart(function () {
           console.log("AJAX starting");
         });
 
-        $(document).ajaxStop(function () {
-          console.log("AJAX request ended");
-        });
-
         $(document).ajaxSend(function (evt, jqXHR, options) {
           console.log("About to Send request for data...");
-        });
-
-        $(document).ajaxComplete(function (evt, jqXHR, options) {
-          console.log("Everything's finished!");
         });
 
         $(document).ajaxError(function (evt, jqXHR, settings, err) {
@@ -35,11 +29,19 @@
           console.log("Looks like everything worked!");
         });
 
-        getData();
+        $(document).ajaxComplete(function (evt, jqXHR, options) {
+          console.log("Everything's finished!");
+        });
+
+        $(document).ajaxStop(function () {
+          console.log("AJAX request ended");
+        });
+
+        getData(); 
       });
       
       function getData() {
-      	$.get("testdata2.txt", successFn);
+      	$.get("testdata.txt", successFn);
       }
       
       function successFn(result) {

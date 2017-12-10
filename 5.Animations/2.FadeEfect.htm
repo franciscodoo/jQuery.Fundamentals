@@ -3,20 +3,21 @@
 <head>
     <title>Element Fading</title>
     <link rel="stylesheet" href="../style.css"/>
-    <script type="text/javascript" src="../jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="../jquery-3.2.1.js"></script>
     <script type="text/javascript">
         $(function() {
             $("#fadein").click(function() {
                 $("#theDiv").fadeIn("fast");
+                //$("#theDiv").fadeIn(200); //or in ms 
             });
             $("#fadeout").click(function() {
                 $("#theDiv").fadeOut("slow");
             });
             $("#fadeto3").click(function() {
-                $("#theDiv").fadeTo("slow", 0.3);
+                $("#theDiv").fadeTo("slow", 0.3); //2nd arg: limit in % to fade object to
             });
             $("#fadeup").click(function() {
-                $("#theDiv").fadeTo("slow", 1.0, onComplete);
+                $("#theDiv").fadeTo("slow", 1.0, onComplete); //can specify completion functions
             });
             $("#pulse").click(function() {
                 $("#theDiv").fadeTo("fast", 0.3)
