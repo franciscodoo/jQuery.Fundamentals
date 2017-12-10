@@ -3,20 +3,20 @@
 <head>
     <title>Inserting Document Content</title>
     <link rel="stylesheet" href="../style.css"/>
-    <script type="text/javascript" src="../jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="../jquery-3.2.1.js"></script>
     <script type="text/javascript">
         $("document").ready(function() {
             // Insertion functions for inserting inside of content
-            //$("#example p").append(" with some content appended");
-            //$("#example p").prepend("Hello! ");
-            //$("#example p:last").appendTo("#example p:first");
-            //$("#example p:last").prependTo("#example p:first");
+            //$("#example p").append(" with some content appended"); //append: adds content to the end of the element, inside the tags
+            //$("#example p").prepend("Hello! "); //prepend: adds content to the beginning of the element, inside the tags
+            //$("#example p:last").appendTo("#example p:first"); //~ appends last paragraph to first paragraph ~     
+            //$("#example p:last").prependTo("#example p:first"); //~ prepends last paragraph to first paragraph ~  
             
             // Insertion functions for inserting outside of content
-            //$("#example p").after("**");
-            //$("#example p").before("**");
-            //$("<p>New Para</p>").insertAfter("#example p:first");
-            //$("<p>New Para</p>").insertBefore("#example p:last");
+            //$("#example p").after("**"); //after: adds content to the end of the element, outside the tags
+            //$("#example p").before("**"); //before: adds content to the beginning of the element, outside the tags
+            //$("<p>New Para</p>").insertAfter("#example p:first"); //~ inserts new <p> with text 'New Para' after the 1st <p> of #example ~
+            //$("<p>New Para</p>").insertBefore("#example p:last"); //~ inserts new <p> with text 'New Para' before last <p> of #example ~
         });
     </script>
 </head>
