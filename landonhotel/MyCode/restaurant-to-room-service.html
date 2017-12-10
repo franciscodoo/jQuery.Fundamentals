@@ -3,7 +3,18 @@
 <head>
 <title>Room Service | The Landon Hotel</title>
 <link rel="stylesheet" href="style/style.css">
-<script src="../../jquery-1.11.1.js"></script>
+<script src="../../jquery-3.2.1.js"></script>
+
+<script type="text/javascript">
+    $("document").ready(function()
+    { 
+        $("#restaurants li[data-type = veg]").each(function(index, element) 
+           {
+               $(element).append(" (v)")
+           });
+    });
+</script>
+
 </head>
 <body class="room-service">
 	<div class="container">

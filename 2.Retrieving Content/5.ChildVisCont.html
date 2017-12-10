@@ -3,17 +3,20 @@
 <head>
     <title>Using Child and Content Filters</title>
     <link rel="stylesheet" type="text/css" href="../style.css"/>
-    <script type="text/javascript" src="../jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="../jquery-3.2.1.js"></script>
     <script type="text/javascript">
         $("document").ready(function() {
-            //$("p:contains('3')").css("border", "3px solid red");
-            //$("p:parent").css("border", "3px solid red");
-            //$("div:has(p[class=a])").css("border", "3px solid red");
+            //*** Content Filters ***
+            //$("p:contains('3')").css("border", "3px solid red");      //select all <p> where text contains '3'
+            //$("p:parent").css("border", "3px solid red");             //select all <p> that are parents: at least one child element (<element> or text)
+            //$("div:has(p[class=a])").css("border", "3px solid red");  //select all <div> where there's at least one <p> where class = 'a'
             
-            //$("div p:first-child").css("border", "3px solid red");
-            //$("div p:last-of-type").css("border", "3px solid red");
-            //$("div p:nth-child(3)").css("border", "3px solid red");
-            //$("div p:nth-child(2n)").css("border", "3px solid red");
+            //*** Child Filters ***
+            //space character means [descendant selector] : selects "descendant" as long as they have an "ancestor" element somewhere above them
+            $("div p:first-child").css("border", "3px solid red");      //select all <p> that are first child of their parent (div) 
+            //$("div p:last-of-type").css("border", "3px solid red");   //select all last <p> of their parent (div) 
+            //$("div p:nth-child(3)").css("border", "3px solid red");   //select all <p> that are 3rd child of their parent (div) 
+            //$("div p:nth-child(2n)").css("border", "3px solid red");  //select all <p> that are multiple of 2 child of their parent (div)
         });
     </script>
 </head>

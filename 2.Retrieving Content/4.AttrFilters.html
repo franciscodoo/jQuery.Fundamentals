@@ -3,13 +3,13 @@
 <head>
     <title>Using Attribute Filters</title>
     <link rel="stylesheet" type="text/css" href="../style.css"/>
-    <script type="text/javascript" src="../jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="../jquery-3.2.1.js"></script>
     <script type="text/javascript">
         $("document").ready(function() {
-    //        $("p[class]").css("border", "3px solid red");
-    //        $("p[id=para1]").css("border", "3px solid red");
-    //        $("p[id^=para]").css("border", "3px solid red");
-    //        $("p[id^=para][lang*=en-]").css("border", "3px solid red");
+    //        $("p[class]").css("border", "3px solid red");                 //Select all <p> where a class is specified 
+    //        $("p[id=para1]").css("border", "3px solid red");              //Select all <p> where id = 'para1'
+    //        $("p[id^=para]").css("border", "3px solid red");              //Select all <p> where id starts with 'para'
+            $("p[id^=para][lang*=en-]").css("border", "3px solid red");     //Select all <p> where id starts with 'para' and  lang contains 'en-'  
         });
     </script>
 </head>
