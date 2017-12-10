@@ -3,15 +3,17 @@
 <head>
     <title>CSS Properties and Class Manipulation</title>
     <link rel="stylesheet" href="../style.css"/>
-    <script type="text/javascript" src="../jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="../jquery-3.2.1.js"></script>
+
     <script type="text/javascript">
-        $("document").ready(function() {
+        $("document").ready(function() 
+        {
             $("#setProp").click(function(evt) {
-                $("#example p").css("text-decoration", "overline")
-                                .css("font-size", "+=1pt");
+                $("#example p").css("text-decoration", "overline").css("font-size", "+=1pt");
             });
 
-            $("#setProps").click(function(evt) {
+            $("#setProps").click(function(evt) 
+            {
                 $("#example p").css({
                     "font-weight" : "bold",
                     "color" : "red",
@@ -32,6 +34,7 @@
             });
         });
     </script>
+
     <style>
         .pClass {
             color: green;

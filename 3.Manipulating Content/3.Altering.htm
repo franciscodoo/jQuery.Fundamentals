@@ -3,23 +3,28 @@
 <head>
 <title>Altering Document Content</title>
 <link rel="stylesheet" href="../style.css"/>
-<script type="text/javascript" src="../jquery-1.11.1.js"></script>
+<script type="text/javascript" src="../jquery-3.2.1.js"></script>
 <script type="text/javascript">
-    $("document").ready(function() {
-        //$("#example p").wrap("<div style='color:red'/>");
-        //$("#example p").wrapAll("<div style='border:3px solid red'/>");
-        //$("#example").empty();
-        //$("#example p.a, #example p.b").remove();
-        //$("#example p.a, #example p.b").detach();
-        //$("<div>replaced</div>").replaceAll("#example p[id]");
-        //$("#example p[id]").replaceWith("<div>replaced</div>");
-        //$("#example p").replaceWith(replacementFn);
+    $("document").ready(function() 
+    {
+        //wrap: wrap content around existing content
+        //$("#example p").wrap("<div style='color:red'/>"); //select all <p> in #example and wrap them with specified div
+        //$("#example p").wrapAll("<div style='border:3px solid red'/>"); wrapAll: all <p> in #example are wrapped in one div
+        //$("#example").empty(); //: removes all child nodes
+        //$("#example p.a, #example p.b").remove(); //remove <p> where class = a || b including embedded data and event handlers
+        //$("#example p.a, #example p.b").detach(); //remove <p> where class = a || b excluding embedded data and event handlers
+        //$("<div>replaced</div>").replaceAll("#example p[id]");//replace any <p> with Id inside #example w/ '<div>replaced</div>'
+        //$("#example p[id]").replaceWith("<div>replaced</div>");//replaceWith: same result, params on inverse order.
+        $("#example p").replaceWith(replacementFn); //replaceWith allow adding callback functions
     });
     
     function replacementFn() {
-        if ($(this).text().indexOf("1") != -1) {
+        if ($(this).text().indexOf("1") != -1) //check if contains '1'
+        {
+
             return "<p>This is paragraph uno</p>";
         }
+        return $(this); // added to fix bug
     }
 </script>
 </head>

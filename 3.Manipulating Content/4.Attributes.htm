@@ -3,11 +3,13 @@
 <head>
     <title>Manipulating Element Attributes</title>
     <link rel="stylesheet" href="../style.css"/>
-    <script type="text/javascript" src="../jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="../jquery-3.2.1.js"></script>
     <script type="text/javascript">
-        $("document").ready(function() {
+        $("document").ready(function() 
+        {
             // Add a title attribute to all of the images
-//            $("a").attr("title", "Photo by some photographer");
+            $("a").attr("title", "A wild description appears!"); //1st arg: attribute name, 2nd arg: new value
+//            $("a").attr("title"); //just holds the existing value for specified attribute
 
             // Make each image open in a new window
 //            $("a").attr("target", "_blank");
@@ -15,7 +17,7 @@
             // Remove the href from the <a> tags, making images unclickable
 //            $("a").removeAttr("href");
 
-            // Modify multiple attributes at once
+            // Modify multiple attributes at once. attr js obj that contains multiple attributes
 //            $("img").attr({ src: "images/Spring.jpg", title: "Spring all the things!" });
         });
     </script>

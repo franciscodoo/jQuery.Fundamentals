@@ -3,12 +3,17 @@
 <head>
     <title>Using the jQuery Event Object</title>
     <link rel="stylesheet" href="../style.css"/>
-    <script type="text/javascript" src="../jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="../jquery-3.2.1.js"></script>
+
     <script type="text/javascript">
-        $(function() {
-            $("#Div1").on("click dblclick", { name: "Div 1" }, function(evt) {
-                updateEventDetails(evt);
-                evt.stopPropagation();
+        $(function() 
+        {
+            //For Div{1,2,3} add click and double click events. For each one there's also a data obj (name) 
+            //indicating which div was clicked, that's passed to the eventhandler 
+            $("#Div1").on("click dblclick", { name: "Div 1" }, function(evt) 
+            {
+                updateEventDetails(evt); //callback function that'll fill all values
+                evt.stopPropagation(); //avoid event from bubbling up the rest of the document
             });
             $("#Div2").on("click dblclick", { name: "Div 2" }, function(evt) {
                 updateEventDetails(evt);
@@ -18,6 +23,8 @@
                 updateEventDetails(evt);
                 evt.stopPropagation();
             });
+
+            //more events based on div class
             $("div.smallbox").on("mouseenter", function(evt) {
                 updateEventDetails(evt);
                 evt.stopPropagation();
@@ -52,6 +59,7 @@
                 $("#evtData").text(evt.data.name);
         }
     </script>
+
 </head>
 <body>
     <h1>Using the jQuery Event Object</h1>

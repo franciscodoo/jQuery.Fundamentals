@@ -3,24 +3,33 @@
   <head>
     <title>Using the Data Methods</title>
     <link rel="stylesheet" href="../style.css"/>
-    <script type="text/javascript" src="../jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="../jquery-3.2.1.js"></script>
+
     <script>
-        $("document").ready(function() {
+        //data(): Store arbitrary data associated with the matched elements or 
+        //        Return the value at the named data store for the first element in the set of matched elements.
+
+        $("document").ready(function() 
+        {
             $("#show").click(function (evt) {
                 // if there is any data, display it
                 alert(JSON.stringify($("#example").data(), null, "  "));
             });
+
             $("#store").click(function (evt) {
                 // store some arbitrary data on the DIV object
                 $("#example").data("key1", 1234);
-                $("#example").data("key2", "Joe Marini");
+                $("#example").data("key2", "X");
             });
+
             $("#remove").click(function (evt) {
                 // clear the data from the DIV
-                $("#example").removeData();
+                $("#example").removeData("key2"); //removes just specified key
+//                $("#example").removeData(); //removes everything
             });
         });
     </script>
+
   </head>
   <body>
     <h1>Using the Data Methods</h1>
